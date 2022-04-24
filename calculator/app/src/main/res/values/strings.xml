@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">calculator</string>
+    <string name="b1">1</string>
+    <string name="b2">2</string>
+    <string name="b3">3</string>
+    <string name="b4">4</string>
+    <string name="b5">5</string>
+    <string name="b6">6</string>
+    <string name="b7">7</string>
+    <string name="b8">8</string>
+    <string name="b9">9</string>
+    <string name="b10">+</string>
+    <string name="b11">0</string>
+    <string name="b12">=</string>
+    <string name="b13">-</string>
+    <string name="b14">X</string>
+    <string name="b15">/</string>
+    <string name="b16">%</string>
+    <string name="b17">AC</string>
+</resources>
