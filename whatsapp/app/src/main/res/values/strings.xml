@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">whatsapp</string>
     <string name="c">hi there!</string>
+    <string name="f1">Adnan</string>
+    <string name="f2">Ahmed</string>
+    <string name="f3">Waleed</string>
+    <string name="f4">Nomi</string>
+    <string name="f5">Talha</string>
+    <string name="f6">WhatsApp</string>
+
 </resources>
