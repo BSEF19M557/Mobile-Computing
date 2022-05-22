@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Kids Zone</string>
+
+    <string name="q1a">Ant</string>
+    <string name="q1b">Aunt</string>
+    <string name="q1c">Cat</string>
+
+    <string name="q2a">Fox</string>
+    <string name="q2b">Lion</string>
+    <string name="q2c">Dog</string>
+
+    <string name="q3a">Rat</string>
+    <string name="q3b">Cat</string>
+    <string name="q3c">Mouse</string>
+
+    <string name="q4a">Camel</string>
+    <string name="q4b">Horse</string>
+    <string name="q4c">Elephant</string>
+
+    <string name="q5a">Dog</string>
+    <string name="q5b">Cat</string>
+    <string name="q5c">Rabbit</string>
+</resources>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#AF87F6">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Lessons"
+            android:textSize="80dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#1"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="A B C "
+                    android:textSize="50dp"/>
+
+            </LinearLayout>
+            <!--border  -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <!--border  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#2"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="D E F "
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <!--border  -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <!--border  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#3"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="G H I "
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <!--border  -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <!--border  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#4"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="J K L"
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <!--border  -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <!--border  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#5"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="M N O"
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#6"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="P Q R"
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#7"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="S T U "
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#8"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="V W X "
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:text="Ch#9"
+                    android:textAlignment="center"
+                    android:textSize="40dp"/>
+                <Button
+                    android:id="@+id/ch9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Y Z"
+                    android:textSize="50dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
