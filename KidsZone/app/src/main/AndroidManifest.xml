@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsZone">
         <activity
+            android:name=".NewVersionLessionDetails"
+            android:exported="false" />
+        <activity
+            android:name=".NewVersionExam"
+            android:exported="false" />
+        <activity
+            android:name=".NewVersionLession"
+            android:exported="false" />
+        <activity
+            android:name=".Newversion"
+            android:exported="false" />
+        <activity
             android:name=".question1"
             android:exported="false" />
         <activity
