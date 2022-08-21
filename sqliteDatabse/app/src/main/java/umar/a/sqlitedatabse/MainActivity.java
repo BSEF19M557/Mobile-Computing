@@ -7,10 +7,12 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editName, editRollNumber;
     Switch switchIsActive;
     ListView listViewStudent;
-    List<Student> list;
-    ArrayAdapter arrayAdapter;
+    ArrayList<Student> list;
+    StudentViewAdopter StudentarrayAdapter;
     String UpdateName;
     int updateRollNumber;
     boolean UpdateEnroll;
@@ -46,15 +48,22 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                try {
-                    studentModel = new Student(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()), switchIsActive.isChecked());
-                    //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
+                if(!(TextUtils.isEmpty(editName.getText().toString()) || TextUtils.isEmpty(editRollNumber.getText()))) {
+                    try {
+                        studentModel = new Student(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()), switchIsActive.isChecked());
+                        //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    }
+                    DBHandler dbHelper = new DBHandler(MainActivity.this);
+                    dbHelper.addStudent(studentModel);
+                    editName.getText().clear();
+                    editRollNumber.getText().clear();
+                    switchIsActive.setChecked(false);
                 }
-                catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                else {
+                    Toast.makeText(MainActivity.this, "Fields Can't be Empty", Toast.LENGTH_SHORT).show();
                 }
-                DBHandler dbHelper  = new DBHandler(MainActivity.this);
-                dbHelper.addStudent(studentModel);
             }
         });
 
@@ -63,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DBHandler dbHelper = new DBHandler(MainActivity.this);
                 list = dbHelper.getAllStudents();
-                arrayAdapter = new ArrayAdapter<Student>
-                        (MainActivity.this, android.R.layout.simple_list_item_1,list);
-                listViewStudent.setAdapter(arrayAdapter);
+                StudentarrayAdapter = new StudentViewAdopter(MainActivity.this,list);
+
+                listViewStudent.setAdapter(StudentarrayAdapter);
 
             }
         });
@@ -92,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                                             public void onClick(DialogInterface dialog, int which) {
                                                 dbHelper.deleteStudent(list.get(position));
                                                 list.remove(position);
-                                                arrayAdapter.notifyDataSetChanged();
+                                                StudentarrayAdapter.notifyDataSetChanged();
                                             }                })
                                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                                             @Override
@@ -122,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int which) {
                                          UpdateName = nameUpdate.getText().toString();
 
-                                         list.get(position).setName(UpdateName);
 
                                          ///rollNumber AlertBox
 
@@ -140,10 +148,11 @@ public class MainActivity extends AppCompatActivity {
                                         mydilog.setPositiveButton("next", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
-                                                updateRollNumber =Integer.parseInt(rollNumber.getText().toString());
+                                                if(!TextUtils.isEmpty(rollNumber.getText().toString())) {
+                                                    updateRollNumber = Integer.parseInt(rollNumber.getText().toString());
+                                                }
 
 
-                                                list.get(position).setRollNmber(updateRollNumber);
 
                                                 ///Enrolled AlertBox
                                                 AlertDialog.Builder mydilog=new AlertDialog.Builder(MainActivity.this);
@@ -159,12 +168,23 @@ public class MainActivity extends AppCompatActivity {
                                                 mydilog.setPositiveButton("Update", new DialogInterface.OnClickListener() {
                                                     @Override
                                                     public void onClick(DialogInterface dialog, int which) {
-                                                        UpdateEnroll =Boolean.parseBoolean(Isenroll.getText().toString());
+                                                        UpdateEnroll =Isenroll.isChecked();
 
-                                                        list.get(position).setEnroll(UpdateEnroll);
+
 
                                                         ///
-                                                        dbHelper.updateStudent(list.get(position));
+                                                        if(!(TextUtils.isEmpty(nameUpdate.getText().toString()) || TextUtils.isEmpty(rollNumber.getText().toString()))) {
+                                                            list.get(position).setName(UpdateName);
+                                                            list.get(position).setRollNmber(updateRollNumber);
+                                                            list.get(position).setEnroll(UpdateEnroll);
+
+                                                            dbHelper.updateStudent(list.get(position));
+                                                        }
+                                                        else {
+                                                            Toast.makeText(MainActivity.this, "Can't Update Some Fields are empty", Toast.LENGTH_SHORT).show();
+                                                        }
+
+
 
                                                         ///
 
